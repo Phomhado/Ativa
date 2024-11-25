@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ativa+</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>Ativa+</h1>
+    <p>Escolha sua faixa etária e objetivo para ver exercícios recomendados!</p>
+  </header>
+  <main>
+    <section class="input-section">
+      <label for="age">Escolha sua faixa etária:</label>
+      <select id="age">
+        <option value="criancas">Crianças (6 a 12 anos)</option>
+        <option value="adolescentes">Adolescentes (13 a 17 anos)</option>
+        <option value="adultos">Adultos (18 a 59 anos)</option>
+        <option value="idosos">Idosos (60+ anos)</option>
+      </select>
+    </section>
+    <section class="input-section">
+      <label for="goal">Escolha seu objetivo:</label>
+      <select id="goal">
+        <option value="perder-peso">Perder Peso</option>
+        <option value="ganhar-musculo">Ganhar Músculo</option>
+        <option value="bem-estar">Bem-Estar</option>
+      </select>
+    </section>
+    <button id="show-exercises" disabled>Mostrar Exercícios</button>
+    <section id="exercises" aria-live="polite">
+      <h2>Exercícios Recomendados:</h2>
+      <ul id="exercise-list"></ul>
+    </section>
+  </main>
+  <footer>
+    <p>"Transforme seu corpo, melhore sua vida!"</p>
+    <p>&copy; 2024 Ativa+. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
