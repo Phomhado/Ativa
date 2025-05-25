@@ -5,9 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ativa+</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header>
+    <div class="theme-toggle">
+      <button id="theme-toggle" aria-label="Alternar tema">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
     <h1>Ativa+</h1>
     <p>Escolha sua faixa etária e objetivo para ver exercícios recomendados!</p>
   </header>
@@ -15,6 +34,7 @@
     <section class="input-section">
       <label for="age">Escolha sua faixa etária:</label>
       <select id="age">
+        <option value="" disabled selected>Selecione sua faixa etária</option>
         <option value="criancas">Crianças (6 a 12 anos)</option>
         <option value="adolescentes">Adolescentes (13 a 17 anos)</option>
         <option value="adultos">Adultos (18 a 59 anos)</option>
@@ -24,20 +44,45 @@
     <section class="input-section">
       <label for="goal">Escolha seu objetivo:</label>
       <select id="goal">
+        <option value="" disabled selected>Selecione seu objetivo</option>
         <option value="perder-peso">Perder Peso</option>
         <option value="ganhar-musculo">Ganhar Músculo</option>
         <option value="bem-estar">Bem-Estar</option>
+        <option value="desenvolvimento-motor">Desenvolvimento Motor</option>
+        <option value="postura">Postura</option>
+        <option value="saude-cardiovascular">Saúde Cardiovascular</option>
+        <option value="reducao-estresse">Redução de Estresse</option>
+        <option value="prevencao-quedas">Prevenção de Quedas</option>
+        <option value="saude-articular">Saúde Articular</option>
       </select>
     </section>
     <button id="show-exercises" disabled>Mostrar Exercícios</button>
+    
+    <div id="loading" class="loading-container" style="display: none;">
+      <div class="loading-spinner"></div>
+      <p>Carregando exercícios...</p>
+    </div>
+
     <section id="exercises" aria-live="polite">
       <h2>Exercícios Recomendados:</h2>
+      <div class="exercise-controls">
+        <button id="random-exercise" class="secondary-button">
+          <i class="fas fa-random"></i> Exercício Aleatório
+        </button>
+        <button id="print-exercises" class="secondary-button">
+          <i class="fas fa-print"></i> Imprimir
+        </button>
+      </div>
       <ul id="exercise-list"></ul>
     </section>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </main>
   <footer>
-    <p>"Transforme seu corpo, melhore sua vida!"</p>
-    <p>&copy; 2024 Ativa+. Todos os direitos reservados.</p>
+    <p>"Transforme o corpo e melhorando a vida de todos!"</p>
+    <p>&copy; 2025 Ativa+. Todos os direitos reservados.</p>
   </footer>
 
   <script src="index.js"></script>
