@@ -305,7 +305,7 @@ export default function Home() {
       </main>
       <footer className={styles.footer}>
         <p className={`${styles.footerText} ${styles.footerTextPrimary}`}>
-          "Transforme o corpo e melhorando a vida de todos!"
+          Transforme o corpo e melhore a vida de todos!
         </p>
         <p className={styles.footerText}>&copy; 2025 Ativa+. Todos os direitos reservados.</p>
       </footer>

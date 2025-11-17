@@ -1,6 +1,6 @@
 import type { AgeGroup, Goal } from '@/data/exerciseData';
 
-const DEFAULT_API_BASE_URL = 'http://localhost:5000';
+const DEFAULT_API_BASE_URL = 'http://localhost:5000/api';
 
 type ExerciseResponse = {
   exercises?: string[];
